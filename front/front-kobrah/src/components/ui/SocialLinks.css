@@ -1,0 +1,22 @@
+.socials {
+  display: flex;
+  gap: 10px;
+}
+.socials a {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--navy);
+  transition: all 0.35s var(--ease);
+}
+.socials a:hover {
+  background: var(--grad);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-4px);
+}

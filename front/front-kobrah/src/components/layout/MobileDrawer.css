@@ -1,0 +1,106 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(11, 12, 69, 0.45);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.4s,
+    visibility 0.4s;
+}
+.overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.drawer {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-start: 0;
+  z-index: 200;
+  width: min(86vw, 360px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -20px 0 60px -20px rgba(11, 12, 69, 0.4);
+  transform: translateX(105%);
+  transition: transform 0.55s var(--ease);
+}
+.drawer.is-open {
+  transform: none;
+}
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.drawer-close {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 0;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  color: var(--ink);
+}
+.drawer-nav {
+  display: grid;
+  gap: 4px;
+}
+.drawer-nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease),
+    background 0.25s,
+    color 0.25s;
+  transition-delay: calc(var(--i) * 55ms + 120ms), calc(var(--i) * 55ms + 120ms), 0s, 0s;
+}
+.drawer-nav a .i {
+  font-size: 20px;
+  color: var(--blue);
+}
+.drawer-nav a.is-active,
+.drawer-nav a:hover {
+  background: var(--grad-soft);
+  color: var(--blue);
+}
+.drawer.is-open .drawer-nav a {
+  opacity: 1;
+  transform: none;
+}
+.drawer-foot {
+  margin-top: auto;
+  padding-top: 24px;
+  display: grid;
+  gap: 14px;
+}
+.drawer-contact {
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.drawer-contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.drawer-contact .i {
+  color: var(--blue);
+}

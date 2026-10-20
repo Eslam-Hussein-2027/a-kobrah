@@ -1,0 +1,52 @@
+.topbar {
+  background: var(--navy-3);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+}
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 42px;
+}
+.topbar-group {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.topbar a,
+.topbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.25s;
+}
+.topbar a:hover {
+  color: #fff;
+}
+.topbar .i {
+  color: var(--cyan);
+}
+.topbar .social {
+  display: flex;
+  gap: 6px;
+}
+.topbar .social a {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+}
+.topbar .social a:hover {
+  background: var(--grad);
+}
+.topbar .social .i {
+  color: #fff;
+}
+@media (max-width: 960px) {
+  .topbar {
+    display: none;
+  }
+}

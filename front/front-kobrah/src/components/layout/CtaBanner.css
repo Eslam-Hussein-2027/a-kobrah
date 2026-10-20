@@ -1,0 +1,55 @@
+.cta {
+  padding-bottom: clamp(64px, 9vw, 110px);
+}
+.cta-box {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: clamp(36px, 6vw, 64px);
+  border-radius: var(--radius-xl);
+  background: var(--grad);
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-lg);
+}
+.cta-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 85% 0%, rgba(255, 255, 255, 0.25), transparent 45%);
+}
+.cta-box .bars {
+  position: absolute;
+  z-index: -1;
+  bottom: -50px;
+  inset-inline-end: 3%;
+  height: 260px;
+  --w: 54px;
+  --g: 26px;
+  opacity: 0.18;
+}
+.cta-box h2 {
+  color: #fff;
+  font-size: clamp(26px, 3.4vw, 38px);
+  margin-bottom: 6px;
+}
+.cta-box p {
+  margin: 0;
+  font-size: 18px;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 600px) {
+  .cta-actions,
+  .cta-actions .btn {
+    width: 100%;
+  }
+}

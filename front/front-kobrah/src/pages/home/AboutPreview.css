@@ -1,0 +1,74 @@
+.about-visual {
+  position: relative;
+  padding: 24px;
+}
+.av-main {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1/1.02;
+  border-radius: var(--radius-xl);
+  background: var(--grad);
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-lg);
+}
+.av-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.28), transparent 45%);
+}
+.av-main .bars {
+  position: absolute;
+  bottom: -30px;
+  inset-inline-end: -10px;
+  height: 80%;
+  --w: 70px;
+  --g: 34px;
+  opacity: 0.16;
+}
+.av-main .logo {
+  position: relative;
+}
+.av-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  line-height: 1.4;
+}
+.av-card strong {
+  display: block;
+  color: var(--ink);
+}
+.av-card small {
+  color: var(--muted);
+  font-size: 13px;
+}
+.av-card-1 {
+  top: 6%;
+  inset-inline-start: -4%;
+}
+.av-card-2 {
+  bottom: 8%;
+  inset-inline-end: -4%;
+}
+@media (max-width: 960px) {
+  .about-visual {
+    max-width: 520px;
+    margin-inline: auto;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .av-card-1 {
+    inset-inline-start: 0;
+  }
+  .av-card-2 {
+    inset-inline-end: 0;
+  }
+}

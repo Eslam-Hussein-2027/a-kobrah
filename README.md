@@ -147,9 +147,9 @@ paint matches.
 
 These are placeholders copied from the reference design — please confirm before going live:
 
-- [ ] Real phone number (currently `+218 XX XXX XXXX`, so "call" links open the contact page instead)
+- [x] Phone number: `+218 91-2345678`
 - [ ] Official email, head-office address, working hours
-- [ ] Facebook / Instagram / LinkedIn URLs
+- [ ] Facebook / Instagram / LinkedIn URLs (the icons are shown without links until real accounts are set in `.env`)
 - [ ] Real figures for the counters (15 years, 25,000 clients, 30 branches)
 - [ ] PDF files for the 10 forms on the Forms page
 - [ ] Which inbox should receive contact-form messages + SMTP details

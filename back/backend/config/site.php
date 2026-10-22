@@ -16,7 +16,7 @@ return [
 
     'name_en' => 'The Great Arabia Insurance Company',
 
-    'phone' => env('SITE_PHONE', '+218 XX XXX XXXX'),
+    'phone' => env('SITE_PHONE', '+218 91-2345678'),
 
     'email' => env('SITE_EMAIL', 'info@a-kobrah.ly'),
 

@@ -32,7 +32,7 @@
   display: flex;
   gap: 6px;
 }
-.topbar .social a {
+.topbar .social > * {
   width: 28px;
   height: 28px;
   border-radius: 8px;

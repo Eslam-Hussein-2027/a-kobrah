@@ -1,6 +1,6 @@
-// A phone number is "dialable" once the placeholder (+218 XX ...) is replaced with digits.
+// A phone number is "dialable" when it only holds digits, spaces and dashes (not a "+218 XX ..." placeholder).
 export function telHref(phone) {
-  return /^\+?[\d\s]+$/.test(phone ?? '') ? `tel:${phone.replace(/\s/g, '')}` : null
+  return /^\+?[\d\s-]+$/.test(phone ?? '') ? `tel:${phone.replace(/[\s-]/g, '')}` : null
 }
 
 export function mailHref(email) {

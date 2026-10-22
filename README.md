@@ -51,7 +51,8 @@ a-kobrah/
     │   └── Models/                     Product, Sector, DownloadableForm, ContactMessage
     ├── config/site.php                 company phone, email, address, hours, social links, stats
     ├── config/cors.php                 allowed frontend origins
-    ├── database/migrations/ · seeders/ website content (products, sectors, forms)
+    ├── database/migrations/ · seeders/ tables + website content (products, sectors, forms)
+    ├── database/mysql/                 create-database.sql (MySQL 8, utf8mb4)
     ├── routes/api.php
     └── tests/Feature/Api/              API feature tests
 ```
@@ -63,21 +64,41 @@ Each component keeps its styles next to it (`Header.jsx` + `Header.css`); only t
 
 ## Run it locally
 
-**Requirements:** PHP 8.4+ (the committed `composer.lock` uses Symfony 8), Composer, Node 20+.
+**Requirements:** PHP 8.4+ (the committed `composer.lock` uses Symfony 8) with `pdo_mysql`, Composer, MySQL 8, Node 20+.
 
-### 1. Backend (http://127.0.0.1:8000)
+### 1. Database (MySQL)
+
+```bash
+mysql -u root -p < back/backend/database/mysql/create-database.sql
+```
+
+This creates the `a_kobrah` database (`utf8mb4`, needed for Arabic) and an optional `a_kobrah` user
+(change its password `change_me` in the script first).
+
+In step 2, `.env` gets these values; put your own MySQL user and password in the last two lines
+(`root` + your root password, or `a_kobrah` + the password from the script):
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=a_kobrah
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 2. Backend (http://127.0.0.1:8000)
 
 ```bash
 cd back/backend
 composer install
-cp .env.example .env
+cp .env.example .env      # then set DB_USERNAME / DB_PASSWORD
 php artisan key:generate
-touch database/database.sqlite
-php artisan migrate --seed
+php artisan migrate --seed   # creates the tables and fills products, sectors, forms
 php artisan serve
 ```
 
-### 2. Frontend (http://localhost:5173)
+### 3. Frontend (http://localhost:5173)
 
 ```bash
 cd front/front-kobrah
@@ -88,6 +109,8 @@ npm run dev
 During development Vite forwards `/api/*` to `http://127.0.0.1:8000`, so no CORS setup is needed.
 
 ### Checks
+
+The backend tests run on an in-memory SQLite database (see `phpunit.xml`), so they don't touch MySQL.
 
 ```bash
 cd back/backend && php artisan test && vendor/bin/pint --test
@@ -138,8 +161,8 @@ paint matches.
    `VITE_API_URL` empty.
 3. **Separate API domain:** build with `VITE_API_URL=https://api.example.ly` and set
    `CORS_ALLOWED_ORIGINS=https://www.example.ly` in the backend `.env`.
-4. Backend: `APP_ENV=production`, `APP_DEBUG=false`, real database (`DB_CONNECTION=mysql` / `pgsql`;
-   Oracle works through the `yajra/laravel-oci8` package), then `php artisan migrate --seed --force`.
+4. Backend: `APP_ENV=production`, `APP_DEBUG=false`, MySQL credentials in `.env` (use the dedicated
+   `a_kobrah` user from `database/mysql/create-database.sql`, not root), then `php artisan migrate --seed --force`.
 
 ---
 

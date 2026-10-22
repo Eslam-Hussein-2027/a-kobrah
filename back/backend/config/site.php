@@ -32,7 +32,7 @@ return [
         'linkedin' => env('SITE_LINKEDIN_URL'),
     ],
 
-    // Home page counters. Confirm the real figures with management before going live.
+    // Home page counters.
     'stats' => [
         ['value' => (int) env('SITE_STAT_YEARS', 15), 'prefix' => '+', 'label' => 'عامًا من الخبرة'],
         ['value' => (int) env('SITE_STAT_CLIENTS', 25000), 'prefix' => '+', 'label' => 'عميل يثق بنا'],

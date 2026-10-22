@@ -145,12 +145,12 @@ paint matches.
 
 ## Still needed from the company
 
-These are placeholders copied from the reference design — please confirm before going live:
+Content still to collect before going live (✔ = confirmed):
 
 - [x] Phone number: `+218 91-2345678`
-- [ ] Official email, head-office address, working hours
+- [x] Email, head-office address and working hours (confirmed)
 - [ ] Facebook / Instagram / LinkedIn URLs (the icons are shown without links until real accounts are set in `.env`)
-- [ ] Real figures for the counters (15 years, 25,000 clients, 30 branches)
+- [x] Counters: 15 years, 25,000 clients, 30 branches (confirmed)
 - [ ] PDF files for the 10 forms on the Forms page
 - [ ] Which inbox should receive contact-form messages + SMTP details
 - [ ] Final list / wording of insurance products

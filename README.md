@@ -145,7 +145,7 @@ paint matches.
 
 ## Still needed from the company
 
-Content still to collect before going live (✔ = confirmed):
+Content still to collect before going live (checked = confirmed):
 
 - [x] Phone number: `+218 91-2345678`
 - [x] Email, head-office address and working hours (confirmed)

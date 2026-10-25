@@ -19,7 +19,6 @@
   --ink: #0b0c45;
   --ink-2: #3d4270;
   --muted: #5a6185;
-  --on-dark: #ffffff;
   --on-dark-2: #c9d1f2;
   --success: #12804f;
   --danger: #c62f35;
@@ -27,7 +26,6 @@
   --font-display: 'Noto Kufi Arabic Variable', 'Noto Kufi Arabic', 'Segoe UI', Tahoma, sans-serif;
   --font-text: 'Readex Pro Variable', 'Readex Pro', 'Segoe UI', Tahoma, sans-serif;
 
-  --track: 6px;
   --r: 8px;
   --container: 1200px;
   --header-h: 76px;

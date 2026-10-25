@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T09:09:30+00:00",
+  "title": "Design System: العربية الكبرى للتأمين المساهمة",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "Network Navy",
+        "canonical": "oklch(33.7% 0.187 269.9)",
+        "tonalRamp": [
+          "#040820",
+          "#151f50",
+          "#283985",
+          "#3e55bf",
+          "#5c78e6",
+          "#85a0f6",
+          "#b2c7ff",
+          "#e1eeff"
+        ]
+      },
+      "blue": {
+        "role": "tertiary",
+        "displayName": "Service Blue",
+        "canonical": "oklch(55.0% 0.166 252.2)",
+        "tonalRamp": [
+          "#000b1d",
+          "#00254a",
+          "#00427c",
+          "#0062b2",
+          "#3485d8",
+          "#6fa9eb",
+          "#a4cdfc",
+          "#d9f1ff"
+        ]
+      },
+      "sky": {
+        "role": "secondary",
+        "displayName": "Coast Sky",
+        "canonical": "oklch(69.0% 0.146 234.8)",
+        "tonalRamp": [
+          "#000d19",
+          "#002942",
+          "#00486f",
+          "#006aa0",
+          "#008dc5",
+          "#60afdb",
+          "#9dd1f1",
+          "#d6f4ff"
+        ]
+      },
+      "cyan": {
+        "role": "tertiary",
+        "displayName": "Signal Cyan",
+        "canonical": "oklch(76.2% 0.138 224.8)",
+        "tonalRamp": [
+          "#000e17",
+          "#002b3d",
+          "#004b67",
+          "#006e95",
+          "#0091ba",
+          "#5bb2d2",
+          "#9ad3ea",
+          "#d5f5ff"
+        ]
+      },
+      "navy-ink": {
+        "role": "neutral",
+        "displayName": "Map Ink",
+        "canonical": "oklch(20.6% 0.103 272.2)",
+        "tonalRamp": [
+          "#070a17",
+          "#1d233d",
+          "#353f68",
+          "#4f5d95",
+          "#6f7fba",
+          "#95a3d2",
+          "#bec8ea",
+          "#e8eeff"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Two",
+        "canonical": "oklch(39.7% 0.078 277.5)",
+        "tonalRamp": [
+          "#090a14",
+          "#212337",
+          "#3b3f5e",
+          "#575d89",
+          "#787fac",
+          "#9ca2c7",
+          "#c3c7e2",
+          "#ebeefd"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Slate",
+        "canonical": "oklch(50.1% 0.058 275.6)",
+        "tonalRamp": [
+          "#090b12",
+          "#212433",
+          "#3c4057",
+          "#595f7f",
+          "#7980a2",
+          "#9ea4bf",
+          "#c4c8dc",
+          "#ebeef9"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper Two",
+        "canonical": "oklch(96.9% 0.007 260.7)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242527",
+          "#404245",
+          "#5f6165",
+          "#808286",
+          "#a3a5a8",
+          "#c8c9cb",
+          "#eeeef0"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Map Rule",
+        "canonical": "oklch(90.5% 0.018 261.3)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232529",
+          "#3e4249",
+          "#5c616b",
+          "#7d838c",
+          "#a1a5ad",
+          "#c6c9cf",
+          "#edeef2"
+        ]
+      },
+      "on-dark-2": {
+        "role": "neutral",
+        "displayName": "Ink Mist",
+        "canonical": "oklch(86.5% 0.047 274.6)",
+        "tonalRamp": [
+          "#090b11",
+          "#222430",
+          "#3d4153",
+          "#5a6079",
+          "#7a819c",
+          "#9fa4ba",
+          "#c4c8d8",
+          "#eceef7"
+        ]
+      },
+      "success": {
+        "role": "status",
+        "displayName": "Confirm Green",
+        "canonical": "oklch(53.0% 0.120 157.2)",
+        "tonalRamp": [
+          "#010f06",
+          "#042d19",
+          "#0d4f30",
+          "#177348",
+          "#429668",
+          "#78b591",
+          "#abd5ba",
+          "#ddf6e6"
+        ]
+      },
+      "danger": {
+        "role": "status",
+        "displayName": "Alert Red",
+        "canonical": "oklch(54.6% 0.187 24.2)",
+        "tonalRamp": [
+          "#1c0202",
+          "#470b0d",
+          "#78191d",
+          "#ac292e",
+          "#d4504e",
+          "#eb837d",
+          "#ffb3ad",
+          "#ffe2de"
+        ]
+      },
+      "logo-gradient": {
+        "role": "brand",
+        "displayName": "Logo Gradient",
+        "canonical": "linear-gradient(90deg, #00b2ee 0%, #0072ce 48%, #1a1c95 100%)",
+        "note": "Pinned brand asset; used only on the logo, the services trunk and the head-office track."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home map title; route header titles at clamp(2rem, 4.2vw, 3.3rem)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Station boards, product and route stop titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; 16px at 600px and below."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Station labels, navigation stops, line tags, buttons, chips, field labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "board-lift",
+        "value": "0 12px 28px -14px rgba(11, 12, 69, 0.28)",
+        "purpose": "Station board, contact form board, back-to-top, primary-button hover."
+      },
+      {
+        "name": "toast-lift",
+        "value": "0 18px 36px -16px rgba(11, 12, 69, 0.34)",
+        "purpose": "Toast only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions and the halo glide."
+      },
+      {
+        "name": "halo-glide",
+        "value": "left 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The one authored motion: the selection halo travels along its line."
+      }
+    ],
+    "lines": [
+      {
+        "name": "individuals",
+        "color": "sky",
+        "number": "1",
+        "stroke": "8px"
+      },
+      {
+        "name": "businesses",
+        "color": "navy",
+        "number": "2",
+        "stroke": "8px"
+      },
+      {
+        "name": "services",
+        "color": "blue",
+        "number": "3",
+        "stroke": "8px",
+        "trunk": "logo-gradient"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-compact",
+        "value": "1240px"
+      },
+      {
+        "name": "strip-map",
+        "value": "1080px"
+      },
+      {
+        "name": "single-column",
+        "value": "960px"
+      },
+      {
+        "name": "strip-two-col",
+        "value": "860px"
+      },
+      {
+        "name": "terminus-vertical",
+        "value": "760px"
+      },
+      {
+        "name": "phone",
+        "value": "600px"
+      },
+      {
+        "name": "narrow",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action board: request a quote, request this cover, send.",
+      "html": "<button class=\"ds-btn ds-btn-primary\" dir=\"rtl\">اطلب عرض سعر<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M19 12H5\"/><path d=\"m12 19-7-7 7-7\"/></svg></button>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:12px 22px;border-radius:var(--r);border:2px solid transparent;font-family:var(--font-display);font-weight:700;font-size:15.5px;cursor:pointer;transition:background-color .2s,color .2s,box-shadow .25s cubic-bezier(.16,1,.3,1)}.ds-btn-primary{background:var(--navy);color:#fff}.ds-btn-primary:hover{background:var(--blue);box-shadow:0 12px 28px -14px rgba(11,12,69,.28)}.ds-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}.ds-btn svg{transition:transform .25s}.ds-btn:hover svg{transform:translateX(-4px)}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary board with an ink frame; inverts on hover.",
+      "html": "<button class=\"ds-btn-ghost\" dir=\"rtl\">اتصل بنا</button>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-btn-ghost{min-height:50px;padding:12px 22px;border-radius:var(--r);border:2px solid var(--navy-ink);background:var(--paper);color:var(--navy-ink);font-family:var(--font-display);font-weight:700;font-size:15.5px;cursor:pointer;transition:background-color .2s,color .2s}.ds-btn-ghost:hover{background:var(--navy-ink);color:#fff}.ds-btn-ghost:focus-visible{outline:3px solid var(--blue);outline-offset:3px}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact form field with Kufi label and reserved error line.",
+      "html": "<label class=\"ds-field\" dir=\"rtl\"><span>الاسم الكامل</span><input placeholder=\"اكتب اسمك الكامل\"><small>يرجى إدخال الاسم الكامل</small></label>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-field{display:grid;gap:6px;font-family:var(--font-text)}.ds-field span{font-family:var(--font-display);font-weight:700;font-size:14.5px;color:var(--navy-ink)}.ds-field input{min-height:50px;padding:11px 14px;border-radius:var(--r);border:2px solid var(--rule);background:var(--paper);outline:0;font:inherit;transition:border-color .2s,box-shadow .2s}.ds-field input:hover{border-color:#aab4cc}.ds-field input:focus{border-color:var(--navy-ink);box-shadow:0 0 0 4px rgba(0,114,206,.2)}.ds-field small{min-height:1.5em;visibility:hidden;color:#c62f35;font-size:13.5px;font-weight:600}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Forms board category toggle with a count.",
+      "html": "<div dir=\"rtl\"><button class=\"ds-chip is-active\">الكل<b>10</b></button> <button class=\"ds-chip\">المطالبات<b>3</b></button></div>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:6px 14px;border-radius:var(--r);border:2px solid var(--rule);background:var(--paper);color:var(--ink-2);font-family:var(--font-display);font-weight:700;font-size:14.5px;cursor:pointer}.ds-chip b{min-width:24px;padding:0 6px;border-radius:999px;background:var(--paper-2);font-size:12.5px;color:var(--navy-ink)}.ds-chip:hover{border-color:var(--navy-ink);color:var(--navy-ink)}.ds-chip.is-active{background:var(--navy-ink);border-color:var(--navy-ink);color:#fff}.ds-chip.is-active b{background:rgba(255,255,255,.18);color:#fff}"
+    },
+    {
+      "name": "Station Navigation",
+      "kind": "nav",
+      "refersTo": "station-ring",
+      "description": "Header navigation drawn as a line of stations; the current page is filled.",
+      "html": "<nav class=\"ds-nav\" dir=\"rtl\"><a class=\"is-here\"><i></i>الرئيسية</a><a><i></i>من نحن</a><a><i></i>تأمين الأفراد</a><a><i></i>اتصل بنا</a></nav>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-nav{position:relative;display:flex}.ds-nav::before{content:'';position:absolute;top:11px;inset-inline:30px;height:3px;border-radius:3px;background:var(--rule)}.ds-nav a{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;padding:2px 12px;font-family:var(--font-display);font-weight:600;font-size:14.5px;color:var(--ink-2);cursor:pointer}.ds-nav i{width:14px;height:14px;margin-top:4px;border-radius:50%;background:var(--paper);border:3px solid var(--navy-ink);transition:transform .25s}.ds-nav a:hover i{transform:scale(1.2);border-color:var(--blue)}.ds-nav a.is-here{color:var(--navy-ink);font-weight:800}.ds-nav a.is-here i{background:var(--blue);transform:scale(1.25)}"
+    },
+    {
+      "name": "Line Bullets",
+      "kind": "custom",
+      "refersTo": "line-bullet-individuals",
+      "description": "The numbered line bullets that name each line wherever it appears.",
+      "html": "<div class=\"ds-bullets\" dir=\"rtl\"><span class=\"ds-b ds-b1\">1</span> خط الأفراد <span class=\"ds-b ds-b2\">2</span> خط الشركات <span class=\"ds-b ds-b3\">3</span> خط الخدمات</div>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-bullets{font-family:var(--font-display);font-weight:700;color:var(--navy-ink);display:flex;align-items:center;gap:8px}.ds-b{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border-radius:50%;font-weight:800;font-size:.82em}.ds-b1{background:var(--sky);color:var(--navy-ink)}.ds-b2{background:var(--navy);color:#fff}.ds-b3{background:var(--blue);color:#fff}"
+    },
+    {
+      "name": "Station",
+      "kind": "custom",
+      "refersTo": "station-ring",
+      "description": "Map station: ring on its line with a Kufi label; selected fills with the line colour.",
+      "html": "<div class=\"ds-line\" dir=\"rtl\"><button class=\"ds-st is-on\"><i></i><span>تأمين السيارات</span></button><button class=\"ds-st\"><i></i><span>التأمين الصحي</span></button></div>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-line{position:relative;display:flex;gap:56px;padding:0 24px}.ds-line::before{content:'';position:absolute;top:8px;inset-inline:0;height:8px;border-radius:8px;background:var(--sky)}.ds-st{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;border:0;background:none;padding:0;font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--navy-ink);cursor:pointer}.ds-st i{width:24px;height:24px;border-radius:50%;background:var(--paper);border:4px solid var(--navy-ink);transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-st span{padding:1px 8px;border-radius:4px}.ds-st:hover i{transform:scale(1.15)}.ds-st:hover span{background:var(--paper-2)}.ds-st.is-on i{background:var(--sky);transform:scale(1.15)}.ds-st.is-on span{background:var(--navy-ink);color:#fff;font-weight:700}"
+    },
+    {
+      "name": "Map Legend",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Framed legend: line swatches with counts beside the company figures.",
+      "html": "<div class=\"ds-key\" dir=\"rtl\"><ul><li><i class=\"s1\"></i>خط الأفراد <em>6 منتجات</em></li><li><i class=\"s2\"></i>خط الشركات <em>8 منتجات</em></li></ul><ul><li><b>+15</b> عامًا من الخبرة</li><li><b>+30</b> فرع ووكيل معتمد</li></ul></div>",
+      "css": ":host{--navy:#1a1c95;--navy-ink:#0b0c45;--blue:#0072ce;--sky:#00a8e8;--paper:#fff;--paper-2:#f2f5fa;--rule:#d9e0ec;--ink-2:#3d4270;--muted:#5a6185;--r:8px;--font-display:'Noto Kufi Arabic Variable','Noto Kufi Arabic','Segoe UI',Tahoma,sans-serif;--font-text:'Readex Pro Variable','Readex Pro','Segoe UI',Tahoma,sans-serif}.ds-key{display:grid;grid-template-columns:auto 1fr;gap:6px 24px;padding:12px 16px;border:2px solid var(--navy-ink);border-radius:var(--r);font-family:var(--font-text);font-size:13.5px;color:var(--ink-2)}.ds-key ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}.ds-key ul:first-child{padding-inline-end:24px;border-inline-end:1px solid var(--rule)}.ds-key li{display:flex;align-items:center;gap:8px}.ds-key ul:first-child li{font-family:var(--font-display);font-weight:700;color:var(--navy-ink)}.ds-key i{width:26px;height:6px;border-radius:6px}.ds-key .s1{background:var(--sky)}.ds-key .s2{background:var(--navy)}.ds-key em{font-style:normal;font-family:var(--font-text);font-weight:400;color:var(--muted)}.ds-key b{font-family:var(--font-display);font-weight:800;color:var(--navy-ink)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Network Map",
+    "overview": "The site is drawn as a printed schematic transit map of the company. Two lines carry the two audiences: the individuals line in sky and the businesses line in navy. Their stations are the insurance products. Both lines bend into a services interchange (forms and claims) and continue as one trunk to a terminus where the visitor reaches a person. Every surface reuses that grammar at its own scale: the header is a line of stations, inner pages open on a band of their line's colour, product pages are strip maps, the claim journey is a route, the closing band is the end of the line, and the footer is the map key.\n\nThe sheet is white and the structure is drawn, not boxed. Lines, rings, bullets and 2px ink frames carry hierarchy. Colour commits at the scale of whole regions (route-header bands, the navy terminus, the ink footer) and as line colour, never as scattered accents. The voice is Arabic first and right-to-left: geometric Kufi lettering for every name a visitor navigates by, a calm readable sans for everything they read.\n\nThere is no photography, and the world needs none: the products, figures and routes are the content. Motion is a single authored moment, the selection halo gliding along its line.",
+    "keyCharacteristics": [
+      "White map sheet; thick round-capped lines (8px) in the three brand blues.",
+      "Stations as white rings with ink outlines; the selected station fills with its line colour.",
+      "Line bullets (filled circles with the line number) name every line wherever it appears.",
+      "Noto Kufi Arabic for names, headings and labels; Readex Pro for text.",
+      "Bands of line colour own whole regions; borders and rules, not shadows, carry structure.",
+      "One authored motion: the halo that glides to the chosen station."
+    ],
+    "rules": [
+      {
+        "name": "The Line Colour Rule",
+        "body": "Sky always means individuals, navy always means businesses, blue always means services. A colour never changes meaning between pages.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gradient Is The Trunk Rule",
+        "body": "The logo gradient appears only in the logo, the services trunk leaving the interchange, and the head-office track. It is never a fill for buttons, text or backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sky Is Not Ink Rule",
+        "body": "Coast Sky fails contrast as text on white; it is used for lines, bullets, swatches and bands with ink text on top.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Tracking Rule",
+        "body": "Arabic is never letter-spaced; spacing breaks the joins.",
+        "section": "typography"
+      },
+      {
+        "name": "The Kufi Names Rule",
+        "body": "Anything a visitor navigates by (stations, lines, pages, actions) is set in Kufi. Sentences are set in Readex.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Phone numbers, years and counts use tabular figures in an isolated left-to-right run (the `num` utility).",
+        "section": "typography"
+      },
+      {
+        "name": "The Frame Before Shadow Rule",
+        "body": "A surface earns a 2px ink frame before it earns a shadow; shadows never stand alone as decoration.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** draw new sections in the line grammar: a line in its audience's colour, ring stations, a line bullet beside the name.",
+      "**Do** keep sky for individuals, navy for businesses and blue for services on every page (The Line Colour Rule).",
+      "**Do** set every navigable name in Noto Kufi Arabic and every sentence in Readex Pro, with no letter-spacing.",
+      "**Do** frame operable surfaces with 2px Map Ink and 8px corners before reaching for a shadow.",
+      "**Do** reserve space for error and status text so state changes never move controls.",
+      "**Do** theme the browser surfaces: selection, caret, scrollbar, focus ring and tabular figures come from the palette."
+    ],
+    "donts": [
+      "**Don't** use the logo gradient as a fill for buttons, text or backgrounds.",
+      "**Don't** set Coast Sky as text on white.",
+      "**Don't** add eyebrow labels above headings, gradient text, scroll-reveal entrances or a preloader.",
+      "**Don't** put a decorative icon beside every station name; on a line, the station is the marker.",
+      "**Don't** place map dots for branch locations until the company supplies real ones."
+    ]
+  }
+}

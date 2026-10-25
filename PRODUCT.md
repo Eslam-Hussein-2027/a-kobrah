@@ -27,7 +27,9 @@ Confirmed differentiators, in the company's words:
 - **Long experience:** 15+ years in the Libyan market.
 - **Large-company and sector cover:** experience insuring oil and energy, contracting and construction, marine trade, industry and other major sectors.
 
-Not confirmed as a differentiator: faster claims settlement than competitors. Existing copy mentions quick claims; do not elevate it into a positioning claim.
+Not confirmed as a differentiator: faster claims settlement than competitors. Do not elevate it into a positioning claim.
+
+Copy decision (confirmed by the company during the redesign): the existing site copy from the manager's reference is kept as written, including lines that mention competitive prices, simplified claims and quick or fair compensation ("أسعار تنافسية", "سرعة في صرف التعويضات", "بخدمة سريعة وتعويضات عادلة", "إجراءات مطالبات مبسّطة"). Keep those lines; do not add new claims of that kind.
 
 ## Operating Context
 

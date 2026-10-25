@@ -17,6 +17,7 @@ only the contact form needs the backend.
 
 ```
 a-kobrah/
+├── .claude/                            Impeccable design skill + agents for Claude Code (see below)
 ├── front/front-kobrah/                 React app
 │   ├── public/favicon.png
 │   ├── index.html                      lang="ar" dir="rtl", Tajawal font
@@ -116,6 +117,21 @@ The backend tests run on an in-memory SQLite database (see `phpunit.xml`), so th
 cd back/backend && php artisan test && vendor/bin/pint --test
 cd front/front-kobrah && npm run lint && npm run build
 ```
+
+---
+
+## Claude Code design skill (Impeccable)
+
+`.claude/skills/impeccable` and `.claude/agents/impeccable-*.md` hold [Impeccable](https://github.com/pbakaus/impeccable)
+v4.7.1 (Apache-2.0), copied from the plugin build in its GitHub repo. Claude Code loads it automatically in this
+project; use it with `/impeccable <command>`, e.g. `/impeccable audit`, `/impeccable critique`, `/impeccable polish`.
+
+- The skill's launcher downloads its engine once from the project's GitHub releases (checksum-verified) into
+  `~/.impeccable/bin/`.
+- Design detector from the command line: `.claude/skills/impeccable/scripts/impeccable detect front/front-kobrah/src`
+  (on Windows: `.claude\skills\impeccable\scripts\impeccable.cmd`).
+- Its automatic edit hooks are not enabled. To add them on your machine, run `npx impeccable install` in the
+  project root.
 
 ---
 

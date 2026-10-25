@@ -1,19 +1,13 @@
-import AboutPreview from './AboutPreview'
 import ClaimSteps from './ClaimSteps'
-import HeroSection from './HeroSection'
-import QuickServices from './QuickServices'
-import ServicesTabs from './ServicesTabs'
-import StatsBand from './StatsBand'
+import NetworkHero from './network/NetworkHero'
+import ProofSection from './ProofSection'
 import WhyUs from './WhyUs'
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <QuickServices />
-      <AboutPreview />
-      <ServicesTabs />
-      <StatsBand />
+      <NetworkHero />
+      <ProofSection />
       <WhyUs />
       <ClaimSteps />
     </>

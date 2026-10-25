@@ -1,29 +1,28 @@
 .checks {
   list-style: none;
   padding: 0;
-  margin: 0 0 26px;
+  margin: 0 0 24px;
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 .checks li {
   display: flex;
-  gap: 12px;
-  align-items: flex-start;
+  gap: 10px;
+  align-items: baseline;
 }
-.checks .i {
+.checks li::before {
+  content: '';
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  padding: 5px;
-  margin-top: 3px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: var(--grad);
-  color: #fff;
-  stroke-width: 3;
+  border: 2.5px solid currentColor;
+  color: var(--blue);
+  transform: translateY(-1px);
 }
 .checks-2 {
   grid-template-columns: 1fr 1fr;
-  gap: 12px 20px;
+  gap: 10px 24px;
 }
 @media (max-width: 600px) {
   .checks-2 {

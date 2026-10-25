@@ -1,27 +1,43 @@
-import ProductGrid from '../../components/products/ProductGrid'
-import PageHero from '../../components/ui/PageHero'
-import SectionHead from '../../components/ui/SectionHead'
+import LineStrip from '../../components/products/LineStrip'
+import Icon from '../../components/ui/Icon'
+import RouteHeader from '../../components/ui/RouteHeader'
+import SectionTitle from '../../components/ui/SectionTitle'
+import { ROUTES } from '../../config/routes'
 import { useContent } from '../../context/content'
-import SectorsMarquee from './SectorsMarquee'
+import './BusinessPage.css'
 
 export default function BusinessPage() {
-  const { products } = useContent()
+  const { products, sectors } = useContent()
 
   return (
     <>
-      <PageHero title="تأمين الشركات" description="برامج تأمين متخصصة تحمي منشأتك وأصولك وتضمن استمرارية أعمالك." />
-      <section className="section">
+      <RouteHeader
+        path={ROUTES.business}
+        title="تأمين الشركات"
+        description="برامج تأمين متخصصة تحمي منشأتك وأصولك وتضمن استمرارية أعمالك."
+      />
+      <section className="section" aria-label="منتجات الشركات">
         <div className="container">
-          <SectionHead
-            kicker="منتجات الشركات"
-            title="حماية متكاملة"
-            highlight="لأعمالك"
-            lead="حلول مرنة تناسب المنشآت الصغيرة والمتوسطة والكبيرة في مختلف القطاعات."
-          />
-          <ProductGrid products={products.business} columns={4} variant="full" />
+          <LineStrip line="business" products={products.business} />
         </div>
       </section>
-      <SectorsMarquee />
+      <section className="section section-tint" aria-labelledby="sectors-title">
+        <div className="container">
+          <SectionTitle
+            id="sectors-title"
+            title="قطاعات نخدمها"
+            lede="حلول مرنة تناسب المنشآت الصغيرة والمتوسطة والكبيرة في مختلف القطاعات."
+          />
+          <ul className="sector-grid">
+            {sectors.map((sector) => (
+              <li key={sector.name}>
+                <Icon name={sector.icon} />
+                {sector.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

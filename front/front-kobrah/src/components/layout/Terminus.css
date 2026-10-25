@@ -1,0 +1,93 @@
+/* End of the line: a navy band where the route stops at a person (quote, call) or the forms. */
+.terminus {
+  background: var(--navy);
+  color: var(--on-dark-2);
+  padding-block: clamp(56px, 7vw, 88px);
+}
+.terminus h2 {
+  color: #fff;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  margin-bottom: 8px;
+}
+.terminus-lede {
+  margin: 0 0 40px;
+  font-size: 1.06rem;
+}
+.terminus-route {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, auto) 1fr;
+  align-items: start;
+  gap: 0 clamp(28px, 5vw, 72px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* The white track runs in from the start edge and stops at the terminus bar. */
+.terminus-route::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  right: calc((100vw - 100%) / -2);
+  left: 18px;
+  height: 8px;
+  border-radius: 8px;
+  background: #fff;
+}
+.terminus-route li {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+.terminus-ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 6px solid #fff;
+}
+.terminus-route li:first-child .terminus-ring {
+  background: var(--cyan);
+}
+.terminus-end {
+  justify-self: end;
+}
+.terminus-end .terminus-cap {
+  display: block;
+  width: 12px;
+  height: 52px;
+  margin-top: -9px;
+  border-radius: 12px;
+  background: #fff;
+}
+@media (max-width: 760px) {
+  .terminus-route {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .terminus-route::before {
+    top: 8px;
+    bottom: 26px;
+    right: 13px;
+    left: auto;
+    width: 8px;
+    height: auto;
+  }
+  .terminus-route li {
+    grid-template-columns: 34px 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+  .terminus-route .btn {
+    width: 100%;
+  }
+  .terminus-end {
+    justify-self: start;
+  }
+  .terminus-end .terminus-cap {
+    width: 52px;
+    height: 12px;
+    margin: 0 -9px 0 0;
+  }
+}

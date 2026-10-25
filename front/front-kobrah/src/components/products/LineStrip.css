@@ -1,0 +1,65 @@
+/* A line page: products are stations on one vertical line, set like a timetable. */
+.line-strip {
+  --line-colour: var(--line-personal);
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.line-strip.line-business {
+  --line-colour: var(--line-business);
+}
+/* The line enters from the route header band above the section. */
+.line-strip::before {
+  content: '';
+  position: absolute;
+  top: calc(clamp(64px, 8vw, 112px) * -1);
+  bottom: 40px;
+  right: 13px;
+  width: 8px;
+  border-radius: 8px;
+  background: var(--line-colour);
+}
+.strip-product {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 0 clamp(20px, 3vw, 48px);
+  padding-block: 30px;
+  border-bottom: 1px solid var(--rule);
+}
+.strip-product:last-child {
+  border-bottom: 0;
+}
+.strip-product-ring {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 5px solid var(--ink);
+}
+.strip-product-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  margin-bottom: 8px;
+}
+.strip-product-head p {
+  margin: 0;
+  color: var(--ink-2);
+}
+.strip-product-detail .checks {
+  margin-bottom: 18px;
+}
+@media (max-width: 860px) {
+  .strip-product {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 14px 18px;
+  }
+  .strip-product-detail {
+    grid-column: 2;
+  }
+}

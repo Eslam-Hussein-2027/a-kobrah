@@ -1,14 +1,11 @@
-import Icon from './Icon'
 import './CheckList.css'
 
-export default function CheckList({ items, columns = 1 }) {
+/** List whose markers are small station rings. */
+export default function CheckList({ items, columns = 1, className = '' }) {
   return (
-    <ul className={columns === 2 ? 'checks checks-2' : 'checks'}>
+    <ul className={['checks', columns === 2 && 'checks-2', className].filter(Boolean).join(' ')}>
       {items.map((item) => (
-        <li key={item}>
-          <Icon name="check" />
-          {item}
-        </li>
+        <li key={item}>{item}</li>
       ))}
     </ul>
   )

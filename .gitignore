@@ -1,0 +1,3 @@
+# Impeccable working files (screenshots and local settings), not source
+.impeccable/review/
+.impeccable/config.local.json

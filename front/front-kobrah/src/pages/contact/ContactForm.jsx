@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import Button from '../../components/ui/Button'
-import Reveal from '../../components/ui/Reveal'
 import { MESSAGES } from '../../config/messages'
 import { useContent } from '../../context/content'
 import { useToast } from '../../context/toast'
@@ -104,8 +103,8 @@ export default function ContactForm() {
   })
 
   return (
-    <Reveal as="form" className="form-card" type="left" noValidate onSubmit={handleSubmit}>
-      <h2>أرسل لنا رسالة</h2>
+    <form className="form-card" noValidate onSubmit={handleSubmit} aria-labelledby="form-title">
+      <h2 id="form-title">أرسل لنا رسالة</h2>
       <p>املأ النموذج وسيتواصل معك أحد مستشارينا في أقرب وقت.</p>
 
       <div className="form-grid">
@@ -146,6 +145,6 @@ export default function ContactForm() {
           </Button>
         </div>
       </div>
-    </Reveal>
+    </form>
   )
 }

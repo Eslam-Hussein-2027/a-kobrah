@@ -2,119 +2,143 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.86);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  backdrop-filter: saturate(180%) blur(14px);
+  background: var(--paper);
   border-bottom: 1px solid transparent;
   transition:
-    box-shadow 0.4s,
-    border-color 0.4s;
+    box-shadow 0.3s,
+    border-color 0.3s;
 }
 .header.is-scrolled {
-  box-shadow: 0 12px 30px -20px rgba(18, 22, 58, 0.4);
-  border-color: var(--line);
+  border-color: var(--rule);
+  box-shadow: 0 10px 24px -20px rgba(11, 12, 69, 0.45);
 }
 .header-inner {
   height: var(--header-h);
   display: flex;
   align-items: center;
-  gap: 24px;
-  transition: height 0.4s var(--ease);
-}
-.header.is-scrolled .header-inner {
-  height: 70px;
+  gap: 28px;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   flex-shrink: 0;
-  transform-origin: right center;
-  transition: transform 0.4s var(--ease);
 }
-.header.is-scrolled .brand {
-  transform: scale(0.87);
-}
-.brand-mark {
-  transition: transform 0.6s var(--ease);
-}
-.brand:hover .brand-mark {
-  transform: rotate(-6deg) scale(1.06);
-}
+
+/* Navigation as a line of stations; the current page is the filled one. */
 .nav {
   margin-inline-start: auto;
+}
+.nav-line {
   position: relative;
   display: flex;
-  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav a {
-  position: relative;
-  padding: 10px 14px;
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--ink);
-  border-radius: 10px;
-  transition: color 0.25s;
-}
-.nav a:hover,
-.nav a.is-active {
-  color: var(--blue);
-}
-.nav-indicator {
+.nav-line::before {
+  content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 11px;
+  inset-inline: 30px;
   height: 3px;
-  width: 0;
   border-radius: 3px;
-  background: var(--grad);
-  transition:
-    left 0.5s var(--ease),
-    width 0.5s var(--ease),
-    opacity 0.3s;
+  background: var(--rule);
 }
+.nav-stop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 12px 4px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.nav-ring {
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  transition:
+    transform 0.25s var(--ease-out),
+    background-color 0.2s,
+    border-color 0.2s;
+}
+.nav-stop:hover {
+  color: var(--ink);
+}
+.nav-stop:hover .nav-ring {
+  transform: scale(1.2);
+  border-color: var(--blue);
+}
+.nav-stop.is-active {
+  color: var(--ink);
+  font-weight: 800;
+}
+.nav-stop.is-active .nav-ring {
+  background: var(--here-colour, var(--blue));
+  border-color: var(--ink);
+  transform: scale(1.25);
+}
+.nav-stop[data-line='personal'] {
+  --here-colour: var(--line-personal);
+}
+.nav-stop[data-line='business'] {
+  --here-colour: var(--line-business);
+}
+.nav-stop[data-line='services'] {
+  --here-colour: var(--line-services);
+}
+
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 .lang-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 9px 12px;
-  border-radius: 999px;
+  min-height: 42px;
+  padding: 8px 12px;
+  border-radius: var(--r);
   border: 0;
   background: transparent;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 14px;
   color: var(--navy);
-  transition: background 0.25s;
+  transition: background-color 0.2s;
 }
 .lang-btn:hover {
-  background: var(--grad-soft);
+  background: var(--paper-2);
 }
 .burger {
   display: none;
   width: 46px;
   height: 46px;
-  border-radius: 14px;
-  border: 0;
-  background: var(--grad-soft);
-  color: var(--navy);
+  border-radius: var(--r);
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
   place-items: center;
-  font-size: 24px;
+  font-size: 22px;
   margin-inline-start: auto;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1240px) {
   .lang-btn {
     display: none;
   }
-}
-@media (max-width: 1180px) {
-  .nav a {
-    padding: 10px 10px;
-    font-size: 15px;
+  .nav-stop {
+    padding-inline: 9px;
+    font-size: 14px;
   }
 }
 @media (max-width: 1080px) {
@@ -127,7 +151,7 @@
   }
 }
 @media (max-width: 600px) {
-  .brand {
-    transform: scale(0.9);
+  :root {
+    --header-h: 66px;
   }
 }

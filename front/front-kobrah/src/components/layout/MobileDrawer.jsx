@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { NavLink } from 'react-router'
+import { PAGE_LINE } from '../../config/lines'
 import { MESSAGES } from '../../config/messages'
 import { NAV_LINKS, ROUTES } from '../../config/routes'
 import { useContent } from '../../context/content'
@@ -11,7 +12,7 @@ import Logo from '../ui/Logo'
 import PhoneLink from '../ui/PhoneLink'
 import './MobileDrawer.css'
 
-const navClass = ({ isActive }) => (isActive ? 'is-active' : undefined)
+const stopClass = ({ isActive }) => (isActive ? 'drawer-stop is-active' : 'drawer-stop')
 
 /** Off-canvas navigation for tablets and phones (opened by the burger button). */
 export default function MobileDrawer({ open, onClose }) {
@@ -41,25 +42,28 @@ export default function MobileDrawer({ open, onClose }) {
         onClick={closeOnLink}
       >
         <div className="drawer-head">
-          <Logo variant="ar" height={42} />
+          <Logo variant="ar" height={40} />
           <button className="drawer-close" type="button" aria-label="إغلاق القائمة" onClick={onClose}>
             <Icon name="x" />
           </button>
         </div>
 
-        <nav className="drawer-nav">
-          {NAV_LINKS.map((link, index) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.to === ROUTES.home}
-              className={navClass}
-              style={{ '--i': index }}
-            >
-              <Icon name={link.icon} />
-              {link.label}
-            </NavLink>
-          ))}
+        <nav aria-label="القائمة الرئيسية">
+          <ol className="drawer-line">
+            {NAV_LINKS.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.to === ROUTES.home}
+                  className={stopClass}
+                  data-line={PAGE_LINE[link.to]}
+                >
+                  <span className="nav-ring" aria-hidden="true" />
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ol>
         </nav>
 
         <div className="drawer-foot">
@@ -72,7 +76,7 @@ export default function MobileDrawer({ open, onClose }) {
           <div className="drawer-contact">
             <PhoneLink>
               <Icon name="phone" />
-              <span dir="ltr">{site.phone}</span>
+              <span className="num">{site.phone}</span>
             </PhoneLink>
             <a href={mailHref(site.email)}>
               <Icon name="mail" />

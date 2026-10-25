@@ -7,17 +7,17 @@
   align-items: center;
   gap: 12px;
   max-width: calc(100% - 32px);
-  padding: 14px 20px;
-  border-radius: 16px;
+  padding: 14px 18px;
+  border-radius: var(--r);
   background: var(--ink);
   color: #fff;
-  font-weight: 700;
-  box-shadow: var(--shadow-lg);
+  font-weight: 500;
+  box-shadow: var(--shadow-lift);
   visibility: hidden;
   transform: translate(-50%, calc(100% + 48px));
   transition:
-    transform 0.55s var(--ease),
-    visibility 0.55s;
+    transform 0.45s var(--ease-out),
+    visibility 0.45s;
 }
 .toast.show {
   visibility: visible;
@@ -26,8 +26,8 @@
 .toast-ico {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--blue);
   flex-shrink: 0;

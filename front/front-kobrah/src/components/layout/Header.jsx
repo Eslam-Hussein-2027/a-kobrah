@@ -1,49 +1,47 @@
 import { useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router'
+import { Link, NavLink } from 'react-router'
+import { PAGE_LINE } from '../../config/lines'
 import { MESSAGES } from '../../config/messages'
 import { BRAND, NAV_LINKS, ROUTES } from '../../config/routes'
 import { useToast } from '../../context/toast'
 import useScrollPosition from '../../hooks/useScrollPosition'
-import useSlidingIndicator from '../../hooks/useSlidingIndicator'
 import Button from '../ui/Button'
 import Icon from '../ui/Icon'
 import Logo from '../ui/Logo'
 import './Header.css'
 
-const navClass = ({ isActive }) => (isActive ? 'is-active' : undefined)
+const stopClass = ({ isActive }) => (isActive ? 'nav-stop is-active' : 'nav-stop')
 
 export default function Header({ menuOpen, onMenuToggle }) {
-  const { pathname } = useLocation()
   const toast = useToast()
   const [scrolled, setScrolled] = useState(false)
-  const { containerRef, indicatorRef, moveTo, reset } = useSlidingIndicator('a.is-active', {
-    inset: 12,
-    watch: pathname,
-  })
 
-  useScrollPosition(({ y }) => setScrolled(y > 10))
+  useScrollPosition(({ y }) => setScrolled(y > 8))
 
   return (
     <header className={scrolled ? 'header is-scrolled' : 'header'}>
       <div className="container header-inner">
         <Link className="brand" to={ROUTES.home} aria-label={`${BRAND} — الرئيسية`}>
-          <Logo variant="mark" height={46} className="brand-mark" decorative />
-          <Logo variant="ar" height={40} decorative />
+          <Logo variant="mark" height="clamp(36px, 4vw, 42px)" decorative />
+          <Logo variant="ar" height="clamp(32px, 3.6vw, 38px)" decorative />
         </Link>
 
-        <nav className="nav" aria-label="القائمة الرئيسية" ref={containerRef} onMouseLeave={reset}>
-          {NAV_LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.to === ROUTES.home}
-              className={navClass}
-              onMouseEnter={(event) => moveTo(event.currentTarget)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          <span className="nav-indicator" ref={indicatorRef} aria-hidden="true" />
+        <nav className="nav" aria-label="القائمة الرئيسية">
+          <ol className="nav-line">
+            {NAV_LINKS.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.to === ROUTES.home}
+                  className={stopClass}
+                  data-line={PAGE_LINE[link.to]}
+                >
+                  <span className="nav-ring" aria-hidden="true" />
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+          </ol>
         </nav>
 
         <div className="header-actions">

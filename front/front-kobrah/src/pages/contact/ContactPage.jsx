@@ -1,22 +1,27 @@
-import PageHero from '../../components/ui/PageHero'
+import RouteHeader from '../../components/ui/RouteHeader'
+import { ROUTES } from '../../config/routes'
 import ContactForm from './ContactForm'
 import ContactInfo from './ContactInfo'
-import MapCard from './MapCard'
+import HeadOffice from './HeadOffice'
 import './ContactPage.css'
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="اتصل بنا" description="يسعدنا تواصلك معنا؛ فريقنا جاهز للإجابة عن استفساراتك وتقديم المشورة." />
+      <RouteHeader
+        path={ROUTES.contact}
+        title="اتصل بنا"
+        description="يسعدنا تواصلك معنا؛ فريقنا جاهز للإجابة عن استفساراتك وتقديم المشورة."
+      />
       <section className="section">
         <div className="container contact-grid">
           <ContactInfo />
           <ContactForm />
         </div>
       </section>
-      <section className="section pt-0">
+      <section className="section section-tint">
         <div className="container">
-          <MapCard />
+          <HeadOffice />
         </div>
       </section>
     </>

@@ -1,33 +1,34 @@
 import Icon from '../../components/ui/Icon'
-import Reveal from '../../components/ui/Reveal'
 import { MESSAGES } from '../../config/messages'
 import { useToast } from '../../context/toast'
 
-/** One downloadable form; falls back to a notice while its PDF is not uploaded yet. */
-export default function FormItem({ form, delay, hidden }) {
+/** One row of the forms board. Until its PDF is uploaded the row says so instead of offering a download. */
+export default function FormItem({ form, hidden }) {
   const toast = useToast()
-  const label = `تحميل ${form.title}`
 
   return (
-    <Reveal as="article" className="form-item" delay={delay} hidden={hidden}>
-      <div className="form-file">
-        <Icon name="file" />
-        <span>PDF</span>
-      </div>
-      <div className="form-body">
-        <span className="tag">{form.category_label}</span>
-        <h3>{form.title}</h3>
+    <li className="board-row" data-cat={form.category} hidden={hidden}>
+      <span className="board-cat">{form.category_label}</span>
+      <div className="board-body">
+        <h2>{form.title}</h2>
         <p>{form.description}</p>
       </div>
       {form.download_url ? (
-        <a className="form-dl" href={form.download_url} aria-label={label} download>
+        <a className="board-dl" href={form.download_url} aria-label={`تحميل ${form.title}`} download>
           <Icon name="download" />
+          تحميل <small>PDF</small>
         </a>
       ) : (
-        <button className="form-dl" type="button" aria-label={label} onClick={() => toast(MESSAGES.formFileMissing)}>
-          <Icon name="download" />
+        <button
+          className="board-dl is-pending"
+          type="button"
+          aria-label={`ملف ${form.title} غير متوفر بعد`}
+          onClick={() => toast(MESSAGES.formFileMissing)}
+        >
+          <Icon name="clock" />
+          الملف قريبًا
         </button>
       )}
-    </Reveal>
+    </li>
   )
 }

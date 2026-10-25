@@ -1,0 +1,84 @@
+/* Inner-page header: a field of the page's line colour, with the route travelled so far. */
+.route-header {
+  position: relative;
+  padding-block: clamp(40px, 6vw, 72px) clamp(44px, 6vw, 76px);
+}
+.route-header h1 {
+  font-size: clamp(2rem, 4.2vw, 3.3rem);
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: inherit;
+}
+.route-header p {
+  max-width: 40rem;
+  margin: 0;
+  font-size: clamp(1.02rem, 1.5vw, 1.15rem);
+}
+.route-personal {
+  background: var(--line-personal);
+  color: var(--ink);
+  --here: var(--ink);
+  --track-colour: rgba(11, 12, 69, 0.45);
+}
+.route-business {
+  background: var(--line-business);
+  color: #fff;
+  --here: #fff;
+  --track-colour: rgba(255, 255, 255, 0.5);
+}
+.route-services {
+  background: var(--line-services);
+  color: #fff;
+  --here: #fff;
+  --track-colour: rgba(255, 255, 255, 0.55);
+}
+
+/* Breadcrumb drawn as a short route: ring, track, filled ring. */
+.route {
+  margin-bottom: 18px;
+}
+.route ol {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+}
+.route li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.route li + li::before {
+  content: '';
+  width: 36px;
+  height: 3px;
+  margin-inline: 6px 2px;
+  background: var(--track-colour);
+  border-radius: 3px;
+}
+.route a,
+.route span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.route a::before,
+.route [aria-current]::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid var(--here);
+  background: transparent;
+}
+.route [aria-current]::before {
+  background: var(--here);
+}
+.route a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+}

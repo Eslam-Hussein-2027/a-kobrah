@@ -1,56 +1,47 @@
+import { Link } from 'react-router'
 import Button from '../../components/ui/Button'
-import Icon from '../../components/ui/Icon'
-import Logo from '../../components/ui/Logo'
-import PageHero from '../../components/ui/PageHero'
-import Reveal from '../../components/ui/Reveal'
-import SectionHead from '../../components/ui/SectionHead'
+import LineBullet from '../../components/ui/LineBullet'
+import RouteHeader from '../../components/ui/RouteHeader'
+import SectionTitle from '../../components/ui/SectionTitle'
+import { LINES } from '../../config/lines'
 import { ROUTES } from '../../config/routes'
+import { useContent } from '../../context/content'
 import './AboutPage.css'
-
-const LINES_OF_BUSINESS = [
-  { icon: 'user', title: 'تأمين الأفراد', text: 'حماية لك ولعائلتك' },
-  { icon: 'briefcase', title: 'تأمين الشركات', text: 'استمرارية لأعمالك' },
-  { icon: 'ship', title: 'التأمين البحري', text: 'أمان لبضائعك' },
-  { icon: 'hardhat', title: 'التأمين الهندسي', text: 'حماية لمشاريعك' },
-]
 
 const IDENTITY = [
   {
-    icon: 'eye',
     title: 'رؤيتنا',
     text: 'أن نكون الخيار الأول للتأمين في ليبيا، ونموذجًا يُحتذى به في الجودة والموثوقية والابتكار.',
   },
   {
-    icon: 'target',
     title: 'رسالتنا',
     text: 'تقديم حلول تأمينية متكاملة ومبتكرة تلبي احتياجات عملائنا، من خلال فريق محترف وخدمة متميزة وتعويضات عادلة وسريعة.',
   },
-  {
-    icon: 'gem',
-    title: 'قيمنا',
-    text: 'النزاهة والشفافية، والالتزام بالوعود، والتميز في الخدمة، والعمل بروح الفريق الواحد.',
-  },
+  { title: 'قيمنا', text: 'النزاهة والشفافية، والالتزام بالوعود، والتميز في الخدمة، والعمل بروح الفريق الواحد.' },
 ]
 
 const PRINCIPLES = [
-  { icon: 'shield', title: 'النزاهة', text: 'نتعامل بأمانة ومسؤولية' },
-  { icon: 'eye', title: 'الشفافية', text: 'وضوح في الشروط والإجراءات' },
-  { icon: 'clipboard', title: 'الالتزام', text: 'نفي بوعودنا لعملائنا' },
-  { icon: 'zap', title: 'التطوير', text: 'نطوّر خدماتنا باستمرار' },
+  { title: 'النزاهة', text: 'نتعامل بأمانة ومسؤولية' },
+  { title: 'الشفافية', text: 'وضوح في الشروط والإجراءات' },
+  { title: 'الالتزام', text: 'نفي بوعودنا لعملائنا' },
+  { title: 'التطوير', text: 'نطوّر خدماتنا باستمرار' },
 ]
 
 export default function AboutPage() {
+  const { products } = useContent()
+
   return (
     <>
-      <PageHero title="من نحن" description="تعرّف على العربية الكبرى للتأمين، رؤيتنا ورسالتنا والقيم التي نعمل بها." />
+      <RouteHeader
+        path={ROUTES.about}
+        title="من نحن"
+        description="تعرّف على العربية الكبرى للتأمين، رؤيتنا ورسالتنا والقيم التي نعمل بها."
+      />
 
-      <section className="section">
-        <div className="container split">
-          <Reveal type="right">
-            <span className="kicker">قصتنا</span>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 42px)' }}>
-              العربية الكبرى <span className="grad-text">للتأمين المساهمة</span>
-            </h2>
+      <section className="section" aria-labelledby="story-title">
+        <div className="container story-grid">
+          <div className="story-copy">
+            <h2 id="story-title">العربية الكبرى للتأمين المساهمة</h2>
             <p className="lead">
               العربية الكبرى للتأمين المساهمة شركة ليبية متخصصة في تقديم خدمات التأمين بمختلف فروعه للأفراد والشركات.
               نعمل وفق أعلى المعايير المهنية وبما يتوافق مع التشريعات المنظمة لقطاع التأمين في ليبيا.
@@ -63,54 +54,51 @@ export default function AboutPage() {
             <Button to={ROUTES.contact} icon="arrow">
               تواصل معنا
             </Button>
-          </Reveal>
+          </div>
 
-          <Reveal className="tiles" type="left">
-            {LINES_OF_BUSINESS.map((item) => (
-              <div className="tile" key={item.title}>
-                <Icon name={item.icon} />
-                {item.title}
-                <small>{item.text}</small>
+          <div className="about-network" role="group" aria-label="شبكة منتجاتنا">
+            {['personal', 'business'].map((line) => (
+              <div className={`about-line line-${line}`} key={line}>
+                <h3>
+                  <LineBullet line={line} />
+                  {LINES[line].name}
+                </h3>
+                <ol>
+                  {products[line].map((product) => (
+                    <li key={product.slug}>
+                      <Link to={LINES[line].route}>{product.title}</Link>
+                    </li>
+                  ))}
+                </ol>
               </div>
             ))}
-            <div className="tiles-center">
-              <Logo variant="mark" height={43} decorative />
-            </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      <section className="section section-white">
+      <section className="section section-tint" aria-labelledby="identity-title">
         <div className="container">
-          <SectionHead kicker="هويتنا" title="رؤيتنا ورسالتنا" highlight="وقيمنا" />
-          <div className="vmv">
-            {IDENTITY.map((item, index) => (
-              <Reveal as="article" className="vmv-card" delay={index * 120} key={item.title}>
-                <div className="feature-icon">
-                  <Icon name={item.icon} />
-                </div>
+          <SectionTitle id="identity-title" title="رؤيتنا ورسالتنا وقيمنا" />
+          <ol className="identity-route">
+            {IDENTITY.map((item) => (
+              <li key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
-              </Reveal>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <SectionHead kicker="ما نلتزم به" title="مبادئ" highlight="نعمل بها كل يوم" />
-          <div className="values">
-            {PRINCIPLES.map((item, index) => (
-              <Reveal className="value" delay={index * 90} key={item.title}>
-                <Icon name={item.icon} />
-                <div>
-                  {item.title}
-                  <small>{item.text}</small>
-                </div>
-              </Reveal>
+          </ol>
+          <h3 className="principles-title" id="principles-title">
+            مبادئ نعمل بها كل يوم
+          </h3>
+          <ul className="principles" aria-labelledby="principles-title">
+            {PRINCIPLES.map((item) => (
+              <li key={item.title}>
+                <span>
+                  <strong>{item.title}</strong> · {item.text}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
     </>

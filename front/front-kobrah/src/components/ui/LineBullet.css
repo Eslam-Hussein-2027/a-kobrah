@@ -1,0 +1,26 @@
+/* Line bullet: the filled circle with the line number, as on transit signage. */
+.line-bullet {
+  display: inline-grid;
+  place-items: center;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.line-bullet.line-personal {
+  background: var(--line-personal);
+  color: var(--ink);
+}
+.line-bullet.line-business {
+  background: var(--line-business);
+  color: #fff;
+}
+.line-bullet.line-services {
+  background: var(--line-services);
+  color: #fff;
+}

@@ -14,7 +14,7 @@ export default function Topbar() {
         <div className="topbar-group">
           <PhoneLink>
             <Icon name="phone" />
-            <span dir="ltr">{site.phone}</span>
+            <span className="num">{site.phone}</span>
           </PhoneLink>
           <a href={mailHref(site.email)}>
             <Icon name="mail" />
@@ -22,11 +22,11 @@ export default function Topbar() {
           </a>
         </div>
         <div className="topbar-group">
-          <span>
+          <span className="topbar-item">
             <Icon name="clock" />
             <span>{site.hours}</span>
           </span>
-          <SocialLinks className="social" />
+          <SocialLinks />
         </div>
       </div>
     </div>

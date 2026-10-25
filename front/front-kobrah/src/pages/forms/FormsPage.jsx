@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import Button from '../../components/ui/Button'
 import Icon from '../../components/ui/Icon'
-import PageHero from '../../components/ui/PageHero'
-import Reveal from '../../components/ui/Reveal'
+import RouteHeader from '../../components/ui/RouteHeader'
 import { ROUTES } from '../../config/routes'
 import { useContent } from '../../context/content'
 import FormItem from './FormItem'
@@ -32,10 +31,14 @@ export default function FormsPage() {
 
   return (
     <>
-      <PageHero title="النماذج" description="حمّل نماذج طلبات التأمين والمطالبات بسهولة، واملأها وسلّمها لأقرب فرع." />
-      <section className="section">
+      <RouteHeader
+        path={ROUTES.forms}
+        title="النماذج"
+        description="حمّل نماذج طلبات التأمين والمطالبات بسهولة، واملأها وسلّمها لأقرب فرع."
+      />
+      <section className="section" aria-label="مكتبة النماذج">
         <div className="container">
-          <Reveal className="forms-toolbar">
+          <div className="board-toolbar">
             <label className="search">
               <Icon name="search" />
               <input
@@ -60,35 +63,32 @@ export default function FormsPage() {
                 </button>
               ))}
             </div>
-          </Reveal>
-
-          {/* Items stay mounted (just hidden) so filtering doesn't replay their entrance animation. */}
-          <div className="forms-grid">
-            {forms.map((form, index) => (
-              <FormItem key={form.id} form={form} delay={(index % 2) * 90} hidden={!matches(form)} />
-            ))}
           </div>
 
+          <ul className="board">
+            {forms.map((form) => (
+              <FormItem key={form.id} form={form} hidden={!matches(form)} />
+            ))}
+          </ul>
+
           {visibleCount === 0 && (
-            <div className="empty">
+            <div className="empty" role="status">
               <Icon name="search" />
               <strong>لا توجد نماذج مطابقة لبحثك</strong>
               <span>جرّب كلمة أخرى أو اختر تصنيفًا مختلفًا.</span>
             </div>
           )}
 
-          <Reveal className="help-box">
-            <span className="chip-ico">
-              <Icon name="headset" />
-            </span>
+          <div className="help-row">
+            <Icon name="headset" />
             <div>
-              <h3>هل تحتاج مساعدة في تعبئة النماذج؟</h3>
+              <h2>هل تحتاج مساعدة في تعبئة النماذج؟</h2>
               <p>فريق خدمة العملاء جاهز لمساعدتك في اختيار النموذج الصحيح وتعبئته.</p>
             </div>
-            <Button to={ROUTES.contact} icon="arrow">
+            <Button to={ROUTES.contact} variant="ghost" icon="arrow">
               تواصل معنا
             </Button>
-          </Reveal>
+          </div>
         </div>
       </section>
     </>

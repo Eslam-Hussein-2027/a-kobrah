@@ -3,18 +3,25 @@ import { BRAND, BRAND_EN, NAV_LINKS, ROUTES } from '../../config/routes'
 import { useContent } from '../../context/content'
 import { mailHref } from '../../utils/contact'
 import Icon from '../ui/Icon'
+import LineBullet from '../ui/LineBullet'
 import Logo from '../ui/Logo'
 import PhoneLink from '../ui/PhoneLink'
 import SocialLinks from '../ui/SocialLinks'
 import './Footer.css'
 
-const SERVICE_LINKS = [
-  { to: ROUTES.personal, label: 'تأمين السيارات' },
-  { to: ROUTES.personal, label: 'التأمين الصحي' },
-  { to: ROUTES.personal, label: 'تأمين السفر' },
-  { to: ROUTES.business, label: 'التأمين البحري' },
-  { to: ROUTES.business, label: 'التأمين الهندسي' },
-  { to: ROUTES.business, label: 'الحريق والممتلكات' },
+const LINE_STOPS = [
+  {
+    line: 'personal',
+    title: 'خط الأفراد',
+    to: ROUTES.personal,
+    stops: ['تأمين السيارات', 'التأمين الصحي', 'تأمين السفر'],
+  },
+  {
+    line: 'business',
+    title: 'خط الشركات',
+    to: ROUTES.business,
+    stops: ['التأمين البحري', 'التأمين الهندسي', 'الحريق والممتلكات'],
+  },
 ]
 
 export default function Footer() {
@@ -23,15 +30,15 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
-        <div>
-          <Logo variant="full" height={165} white className="footer-logo" />
+        <div className="footer-about">
+          <Logo variant="full" height={150} white className="footer-logo" />
           <p>شركة ليبية متخصصة في تقديم حلول التأمين للأفراد والشركات، نعمل لنمنح عملاءنا الطمأنينة والثقة.</p>
           <SocialLinks />
         </div>
 
         <div>
-          <h4>روابط سريعة</h4>
-          <ul>
+          <h2>روابط سريعة</h2>
+          <ul className="footer-stops">
             {NAV_LINKS.map((link) => (
               <li key={link.to}>
                 <Link to={link.to}>{link.label}</Link>
@@ -41,19 +48,27 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4>خدماتنا</h4>
-          <ul>
-            {SERVICE_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link to={link.to}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
+          <h2>خدماتنا</h2>
+          {LINE_STOPS.map((group) => (
+            <div className={`footer-line line-${group.line}`} key={group.line}>
+              <h3>
+                <LineBullet line={group.line} />
+                {group.title}
+              </h3>
+              <ul>
+                {group.stops.map((stop) => (
+                  <li key={stop}>
+                    <Link to={group.to}>{stop}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         <div>
-          <h4>تواصل معنا</h4>
-          <ul className="f-contact">
+          <h2>تواصل معنا</h2>
+          <ul className="footer-contact">
             <li>
               <Icon name="pin" />
               <span>{site.address}</span>
@@ -61,7 +76,7 @@ export default function Footer() {
             <li>
               <Icon name="phone" />
               <PhoneLink>
-                <span dir="ltr">{site.phone}</span>
+                <span className="num">{site.phone}</span>
               </PhoneLink>
             </li>
             <li>
@@ -78,9 +93,11 @@ export default function Footer() {
 
       <div className="container footer-bottom">
         <span>
-          © {new Date().getFullYear()} {BRAND}. جميع الحقوق محفوظة.
+          © <span className="num">{new Date().getFullYear()}</span> {BRAND}. جميع الحقوق محفوظة.
         </span>
-        <span>{BRAND_EN}</span>
+        <span lang="en" dir="ltr">
+          {BRAND_EN}
+        </span>
       </div>
     </footer>
   )

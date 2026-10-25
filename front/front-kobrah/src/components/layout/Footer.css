@@ -1,93 +1,119 @@
+/* Footer: the map key. */
 .footer {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  padding-top: 72px;
-  background: var(--navy-3);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 15.5px;
-}
-.footer::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  top: -300px;
-  inset-inline-start: -200px;
-  background: radial-gradient(circle, rgba(0, 114, 206, 0.35), transparent 65%);
+  background: var(--navy-ink);
+  color: var(--on-dark-2);
+  font-size: 15px;
+  padding-top: clamp(56px, 7vw, 80px);
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.25fr;
+  grid-template-columns: 1.3fr 1fr 1.2fr 1.3fr;
   gap: 40px;
   padding-bottom: 48px;
 }
 .footer-logo {
   margin-bottom: 18px;
 }
-.footer h4 {
-  color: #fff;
-  font-size: 18px;
-  margin-bottom: 18px;
-  position: relative;
-  padding-bottom: 12px;
+.footer-about p {
+  max-width: 22rem;
 }
-.footer h4::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  inset-inline-start: 0;
-  width: 34px;
-  height: 3px;
-  border-radius: 3px;
-  background: var(--grad);
+.footer h2 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 .footer ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 10px;
+  gap: 4px;
 }
 .footer ul a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  transition:
-    color 0.25s,
-    transform 0.35s var(--ease);
-}
-.footer ul a::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--sky);
-  opacity: 0.6;
+  gap: 10px;
+  min-height: 32px;
+  transition: color 0.2s;
 }
 .footer ul a:hover {
   color: #fff;
-  transform: translateX(-5px);
 }
-.footer .f-contact li {
+.footer-stops a::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.8;
+}
+.footer-line + .footer-line {
+  margin-top: 18px;
+}
+.footer-line h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+/* Each group is a short line with its stations, aligned under the line bullet. */
+.footer-line ul {
+  position: relative;
+}
+.footer-line ul::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  right: 9px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--line-colour);
+}
+.footer-line ul a::before {
+  content: '';
+  position: relative;
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  margin-inline-start: 4px;
+  border-radius: 50%;
+  background: var(--navy-ink);
+  border: 3px solid #fff;
+}
+.footer-line.line-personal {
+  --line-colour: var(--line-personal);
+}
+.footer-line.line-business {
+  --line-colour: #6b6fd8;
+}
+.footer-contact li {
   display: flex;
   gap: 12px;
   align-items: flex-start;
+  min-height: 32px;
 }
-.footer .f-contact a::before {
-  display: none;
-}
-.footer .f-contact .i {
-  margin-top: 5px;
+.footer-contact .i {
+  margin-top: 6px;
   color: var(--cyan);
-  font-size: 18px;
+}
+.footer-contact a:hover {
+  color: #fff;
+}
+.footer .socials {
+  margin-top: 4px;
 }
 .footer .socials > * {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.22);
   color: #fff;
+}
+.footer .socials a:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--navy);
 }
 .footer-bottom {
   display: flex;
@@ -95,9 +121,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  padding-block: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 14px;
+  padding-block: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13.5px;
 }
 @media (max-width: 960px) {
   .footer-grid {
